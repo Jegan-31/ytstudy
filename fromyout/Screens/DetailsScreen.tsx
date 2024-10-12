@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button,StyleSheet } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 // Typing props for DetailsScreen using NativeStackScreenProps
@@ -18,13 +19,24 @@ function DetailsScreen({ navigation }: DetailsScreenProps) {
         title="Go to Details... again"
         onPress={() => navigation.navigate('Home')}
       />
-      <Button
+     
+      <Button 
         title="Go to newpage... again"
         onPress={() => navigation.navigate('Logindo')}
       />
+     
+     
+
     </View>
   );
 }
+const styles =StyleSheet.create({
+  loginButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+})
+
 
 export default DetailsScreen;
 export  type RootStackParamList={

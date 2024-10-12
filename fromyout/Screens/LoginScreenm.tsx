@@ -1,9 +1,14 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, Button } from 'react-native';
 import { useNavigation } from 'expo-router';
+import ForgotPasswordScreen from '@/Screens/Forgotpass'
 
+import ForgotScreen from '@/Screens/Forgotpass';
 type LoginScreenNavigationProp = NativeStackNavigationProp<  RootStackParamList,  'loginApp'>;
+type props={
+  navigation:LoginScreenNavigationProp
+}
 const loginApp: React.FC = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
   console.log("from login app")
@@ -30,10 +35,14 @@ const loginApp: React.FC = () => {
           <Text><i className="fa-sharp fa-light fa-eye"></i></Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.forgotPassword}>
+      <TouchableOpacity style={styles.forgotPassword} >
         <Text style={styles.forgotPasswordText}>Forgot password ?</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.loginButton}>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.navigate('forgot')}
+      />
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
@@ -140,4 +149,6 @@ const styles = StyleSheet.create({
 export default loginApp;
 export type RootStackParamList={
   loginApp:undefined
+  forgot:undefined
+  
 }

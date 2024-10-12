@@ -9,6 +9,7 @@ const { width } = Dimensions.get('window');
 // Typing props for HomeScreen using NativeStackScreenProps
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
+
 function HomeScreen({ navigation }: HomeScreenProps) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -223,4 +224,6 @@ export default HomeScreen;
 export type RootStackParamList = {
   Home: undefined;
   Details: undefined;
+  NewUser:undefined
+
 };
